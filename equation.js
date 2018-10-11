@@ -1,5 +1,4 @@
 let a, b, c;
-console.log('Please enter values for your equation: a, b and c together with sign');
 a = process.argv[2]
 b = process.argv[3]
 c = process.argv[4]
@@ -19,7 +18,10 @@ function resolve (a, b, c) {
     console.log(`Your radical is: \n\t\tx = ${x}`);
     return;
   } else {
-    console.log(`Your equation doesn't has radicals`);
+    disc = Math.abs(disc)
+    x1 = `(${-b} + ${Math.sqrt(disc)}i)/${2*a}`;
+    x2 = `(${-b} - ${Math.sqrt(disc)}i)/${2*a}`;
+    console.log(`Radicals are: \n\t\tx1 = ${x1}  \n\t\tx2 = ${x2}`);
     return;
   }
 }
