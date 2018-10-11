@@ -1,20 +1,25 @@
 let a, b, c;
 console.log('Please enter values for your equation: a, b and c together with sign');
-
+a = process.argv[2]
+b = process.argv[3]
+c = process.argv[4]
+resolve(a, b, c)
 
 function resolve (a, b, c) {
   console.log(`Your equation: ${a}x^2 + (${b})x + (${c})`);
 
-  let disc = a*a - (4*a*c);
-
+  let disc = b*b - (4*a*c);
   if (disc > 0) {
     x1 = (-b + Math.sqrt(disc))/2*a;
     x2 = (-b - Math.sqrt(disc))/2*a;
-    return `Radicals are: \n\t\tx1 = ${x1}  \n\t\tx2 = ${x2}`;
-  } else if (disc = 0){
+    console.log(`Radicals are: \n\t\tx1 = ${x1}  \n\t\tx2 = ${x2}`);
+    return;
+  } else if (disc == 0){
     x = -b/(2*a);
-    return `Your radical is: \n\t\tx = ${x}`;
+    console.log(`Your radical is: \n\t\tx = ${x}`);
+    return;
   } else {
-    return `Your equation doen't has radicals`;
+    console.log(`Your equation doesn't has radicals`);
+    return;
   }
 }
